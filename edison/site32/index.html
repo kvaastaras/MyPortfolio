@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Live counter</title>
+</head>
+<body>
+    <div class="container">
+        <h3>Лічильник символів</h3>
+        <textarea placeholder="Напишіть свій текст тут"></textarea>
+        <p>Кількість символів:
+            <span class="count">0</span>
+        </p>
+    </div>
+    <script>
+        const textarea = document.querySelector('textarea');
+        const count = document.querySelector('.count'); 
+
+        textarea.addEventListener('keyup', () => {
+            count.innerHTML = textarea.value.replace(/\s/g, "").length;
+        })
+    </script>
+</body>
+</html>
